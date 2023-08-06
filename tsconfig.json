@@ -1,20 +1,18 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "ESNext",
         "declaration": true,
         "rootDir": "src/",
         "outDir": "bin/",
         "experimentalDecorators": true,
-        "module": "amd",
-        "moduleResolution": "node",
+        "module": "ESNext",
+        "moduleResolution": "Node",
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strict": true,
         "lib": [
-            "es5",
-            "es6",
-            "dom",
-            "es2015.promise"
+            "DOM",
+            "ESNext"
         ]
     }
 }

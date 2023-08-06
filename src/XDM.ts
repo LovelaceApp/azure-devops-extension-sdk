@@ -308,7 +308,7 @@ export class XDMChannel implements IXDMChannel {
                 this._success(rpcMessage, result, rpcMessage.handshakeToken);
             }
         }
-        catch (exception) {
+        catch (exception: any) {
             // send back as error if an exception is thrown
             this.error(rpcMessage, exception);
         }
@@ -328,7 +328,7 @@ export class XDMChannel implements IXDMChannel {
             registeredObject = globalObjectRegistry.getInstance(instanceId, instanceContext);
         }
 
-        return registeredObject;
+        return registeredObject as any;
     }
 
     /**
@@ -628,7 +628,7 @@ class XDMChannelManager implements IXDMChannelManager {
 
         if (typeof event.data === "string") {
             try {
-                rpcMessage = JSON.parse(event.data);
+                rpcMessage = JSON.parse(event.data) as any;
             }
             catch (error) {
                 // The message is not a valid JSON string. Not one of our events.
